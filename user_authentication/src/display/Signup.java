@@ -4,6 +4,7 @@ import codes.DB_connect;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 
 public class Signup extends javax.swing.JFrame {
 
@@ -61,6 +62,11 @@ public class Signup extends javax.swing.JFrame {
 
         signup_signup.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         signup_signup.setText("signup");
+        signup_signup.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                signup_signupMouseClicked(evt);
+            }
+        });
         signup_signup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 signup_signupActionPerformed(evt);
@@ -197,11 +203,11 @@ public class Signup extends javax.swing.JFrame {
     }//GEN-LAST:event_signup_loginActionPerformed
 
     private void signup_emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signup_emailActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_signup_emailActionPerformed
 
     private void signup_phoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signup_phoneActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_signup_phoneActionPerformed
 
     private void signup_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signup_loginMouseClicked
@@ -209,11 +215,28 @@ public class Signup extends javax.swing.JFrame {
         obj.setVisible(true);
     }//GEN-LAST:event_signup_loginMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
+    private void signup_signupMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signup_signupMouseClicked
+            
+            String username1 = signup_username.getText();
+            String email1 = signup_email.getText();
+            String phone_number1 = signup_phone.getText();
+            String password1 =  signup_password.getText();
+            
+                    try {
+                                String sql = "insert into operation (username, email, phonenumber, password) values ('"+username1+"', '"+email1+"', '"+phone_number1+"', '"+password1+"')";
+                                pst = conn.prepareStatement(sql);
+                                pst.execute();
+                                JOptionPane.showMessageDialog(null, "Succesfully added data!.");
+                    } catch (Exception e) {
+                                JOptionPane.showMessageDialog(rootPane, e);
+                    }
+                    
+            
+    }//GEN-LAST:event_signup_signupMouseClicked
+
+    
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+        
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -236,7 +259,7 @@ public class Signup extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+       
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Signup().setVisible(true);

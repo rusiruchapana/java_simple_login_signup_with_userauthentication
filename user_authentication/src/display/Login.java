@@ -50,6 +50,11 @@ public class Login extends javax.swing.JFrame {
 
         login_signup.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         login_signup.setText("signup");
+        login_signup.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                login_signupMouseClicked(evt);
+            }
+        });
         login_signup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 login_signupActionPerformed(evt);
@@ -123,7 +128,8 @@ public class Login extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(666, 408));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void login_usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_usernameActionPerformed
@@ -141,6 +147,11 @@ public class Login extends javax.swing.JFrame {
     private void login_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_loginActionPerformed
        
     }//GEN-LAST:event_login_loginActionPerformed
+
+    private void login_signupMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_login_signupMouseClicked
+        Signup obj = new Signup();
+        obj.setVisible(true);
+    }//GEN-LAST:event_login_signupMouseClicked
 
     
     public static void main(String args[]) {

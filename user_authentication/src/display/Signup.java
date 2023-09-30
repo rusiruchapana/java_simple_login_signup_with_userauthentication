@@ -47,7 +47,7 @@ public class Signup extends javax.swing.JFrame {
         jLabel4.setText("Username");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 35)); // NOI18N
-        jLabel5.setText("Home");
+        jLabel5.setText("Signup");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel6.setText("Password");
@@ -74,6 +74,11 @@ public class Signup extends javax.swing.JFrame {
 
         signup_login.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         signup_login.setText("login");
+        signup_login.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                signup_loginMouseClicked(evt);
+            }
+        });
         signup_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 signup_loginActionPerformed(evt);
@@ -176,7 +181,8 @@ public class Signup extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(666, 449));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void signup_usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signup_usernameActionPerformed
@@ -202,6 +208,11 @@ public class Signup extends javax.swing.JFrame {
     private void signup_phoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signup_phoneActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_signup_phoneActionPerformed
+
+    private void signup_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signup_loginMouseClicked
+        Login obj = new Login();
+        obj.setVisible(true);
+    }//GEN-LAST:event_signup_loginMouseClicked
 
     /**
      * @param args the command line arguments
